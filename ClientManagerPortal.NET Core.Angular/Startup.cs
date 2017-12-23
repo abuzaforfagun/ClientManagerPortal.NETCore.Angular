@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AutoMapper;
-
 namespace ClientManagerPortal.NET_Core.Angular
 {
     public class Startup

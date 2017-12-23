@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ClientManagerPortal.NET_Core.Angular.core.Models;
+using AutoMapper;
+using ClientManagerPortal.NET_Core.Angular.Presistance;
 
 namespace ClientManagerPortal.NET_Core.Angular.API
 {
@@ -13,7 +15,9 @@ namespace ClientManagerPortal.NET_Core.Angular.API
     public class ClientsController : Controller
     {
         private List<Client> clients;
-        public ClientsController()
+        private readonly IMapper mapper;
+
+        public ClientsController(IMapper mapper)
         {
             clients = new List<Client>()
             {
@@ -63,13 +67,16 @@ namespace ClientManagerPortal.NET_Core.Angular.API
                     
                 },
             };
+            this.mapper = mapper;
         }
 
         [HttpGet]
         [Route("api/Clients")]
         public IActionResult GetAll()
         {
-            return Ok(clients);
+            
+            List<ClientPresistance> res = mapper.Map<List<Client>, List<ClientPresistance>>(clients);
+            return Ok(res);
         }
 
         [HttpGet]
@@ -86,6 +93,7 @@ namespace ClientManagerPortal.NET_Core.Angular.API
             {
                 return NotFound();
             }
+            
             return Ok(client);
         }
 
