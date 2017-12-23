@@ -52,6 +52,7 @@ namespace ClientManagerPortal.NET_Core.Angular.API
                     
                 },new Client()
                 {
+                    
                     Id=4, 
                     Name="Client 4",
                     Projects={
