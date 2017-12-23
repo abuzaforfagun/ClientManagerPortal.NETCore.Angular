@@ -37,6 +37,7 @@ namespace ClientManagerPortal.NET_Core.Angular.API
                         new Project(){Id=1, Name="Project 1"},
                         new Project(){Id=2, Name="Project 2",},
                         new Project(){Id=3, Name="Project 3"},
+                        new Project(){Id=4, Name="Project 4"},
                     }
                     
                 },
@@ -52,7 +53,6 @@ namespace ClientManagerPortal.NET_Core.Angular.API
                     
                 },new Client()
                 {
-                    
                     Id=4, 
                     Name="Client 4",
                     Projects={
