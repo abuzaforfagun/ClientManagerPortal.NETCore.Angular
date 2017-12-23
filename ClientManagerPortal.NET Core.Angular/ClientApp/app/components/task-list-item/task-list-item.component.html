@@ -1,10 +1,11 @@
+
 <h2>{{selectedItem.Name}}</h2>
 <hr/>
 
 <div class="dialogue add_new">
     <form (submit)="addProject()">
         <div class="col-md-6">
-            <input type="text" [(ngModel)] ="newProject.Name" class="form-control col-md-6" name="txtClientName"/>
+            <input type="text" [(ngModel)] ="newProject.name" class="form-control col-md-6" name="txtClientName"/>
         </div>
         <div class="col-md-6">
             <input type="submit"  class="btn btn-primary" value="Save"/>
@@ -13,11 +14,11 @@
     </form>
 </div>
 
-<div *ngIf="selectedItem.Projects.length == 0">
+<div *ngIf="selectedItem.projects.length == 0">
     No item found
 </div>
 
 
 <ul>
-  <li *ngFor="let item of selectedItem.Projects">{{item.Name}}</li>
+  <li *ngFor="let item of selectedItem.projects">{{item.name}}</li>
 </ul>

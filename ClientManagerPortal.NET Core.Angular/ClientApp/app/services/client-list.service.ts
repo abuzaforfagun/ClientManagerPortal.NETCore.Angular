@@ -1,12 +1,22 @@
 import { Injectable } from '@angular/core';
+import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { Http } from '@angular/http';
 
 @Injectable()
-export class ClientListService {
+export class ClientListService implements OnInit{
+  ngOnInit() {
+    
+  }
   clients:any[]=[];
-  constructor() { 
-    this.getClient();
+  constructor(private http:Http) { 
+    this.http.get("http://localhost:51931/api/Clients").subscribe(res => this.clients=res.json());
   }
   public getClient(){
+    
+    this.http.get("http://localhost:51931/api/Clients").subscribe(res => this.clients=res.json());
+    
+    
+    /*
     var client1={
       Id:1,
       Name:"Client 1",
@@ -42,5 +52,10 @@ export class ClientListService {
     
     this.clients.push(client1);
     this.clients.push(client2);
+    */
+  }
+
+  public deleteClient(id:number){
+    this.http.delete("http://localhost:51931/api/Clients/" + id);
   }
 }

@@ -1,27 +1,33 @@
 import { ClientListService } from './../../services/client-list.service';
 import { Component } from '@angular/core';
+import { Http } from '@angular/http';
+import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
     selector: 'nav-menu',
     templateUrl: './navmenu.component.html',
     styleUrls: ['./navmenu.component.css']
 })
-export class NavMenuComponent {
+export class NavMenuComponent implements OnInit {
+    tmpclients:any[]=[];
+    ngOnInit(): void {
+        
+        this.clients = this.clientList.clients;
+
+    }
     clients:any[]=[];
     newClient:any;
     validationMessage:string="";
     openAddClientBox=false;
 
-    constructor(private clientList:ClientListService){
+    constructor(private clientList:ClientListService, private http:Http){
       
         this.newClient ={
-            Id:0,
-            Name:"",
-            Projects:[]
+            id:0,
+            name:"",
+            projects:[]
         }
-        
-        this.clients = clientList.clients;
-          
+        console.log(this.clientList.clients);
     }
 
     addClient()
@@ -31,15 +37,15 @@ export class NavMenuComponent {
           this.validationMessage="Please type something.";
           return;
         }
-        var newId = this.clientList.clients[this.clientList.clients.length-1].Id +1;
-        this.newClient.Id=newId;
-        
+        var newId = this.clientList.clients[this.clientList.clients.length -1].id +1;
+        this.newClient.id=newId;
+        console.log(this.clientList.clients);
         this.clientList.clients.push(this.newClient);
         
         this.newClient={
-          Id:0,
-          Name:"",
-          Projects:[]
+          id:0,
+          name:"",
+          projects:[]
         }
         this.openAddClientBox=false;
     }

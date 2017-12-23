@@ -18,32 +18,37 @@ export class TaskListItemComponent implements OnInit {
       Id:0,
       Name:""
     }
+    console.log(this.clientList.clients);
+    
     this.route.events.subscribe(path => {
       if(path.constructor.name==="NavigationEnd"){
         this.sub=this.activatedRoute.snapshot.paramMap.get('id');
         console.log("From subscribe event: " +this.sub);
         var items = clientList.clients.filter(
-          client=>client.Id==this.sub
+          client=>client.id==this.sub
         );
         if(items.length>0){
           this.selectedItem = items[0];
         }else{
           this.selectedItem={
-            Id:0,
-            Name:""
+            id:0,
+            name:""
           }
         }
         console.log(this.selectedItem);
       }
     });
+    
   }
 
   addProject(){
-    this.selectedItem.Projects.push(this.newProject);
+    this.selectedItem.projects.push(this.newProject);
     this.newProject={
-      Id:0,
-      Name:""
+      id:0,
+      name:""
     }
+    this.clientList.deleteClient(1);
+    console.log(this.clientList.clients);
   }
   
   id: number;
