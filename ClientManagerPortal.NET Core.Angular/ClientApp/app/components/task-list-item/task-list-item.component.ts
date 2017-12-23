@@ -14,29 +14,29 @@ export class TaskListItemComponent implements OnInit {
 
   constructor(private activatedRoute:ActivatedRoute, 
               private route:Router, private clientList:ClientListService ) {
+
+    
     this.newProject={
       Id:0,
       Name:""
     }
-    console.log(this.clientList.clients);
     
     this.route.events.subscribe(path => {
       if(path.constructor.name==="NavigationEnd"){
         this.sub=this.activatedRoute.snapshot.paramMap.get('id');
-        console.log("From subscribe event: " +this.sub);
-        var items = clientList.clients.filter(
-          client=>client.id==this.sub
-        );
-        if(items.length>0){
-          this.selectedItem = items[0];
-        }else{
-          this.selectedItem={
-            id:0,
-            name:""
-          }
-        }
-        console.log(this.selectedItem);
+        
+        
       }
+      this.clientList.getOneClient(this.sub)
+      .subscribe(
+        v => this.selectedItem = v,
+        err => {
+          if (err.status == 404) {
+            this.route.navigate(['/vehicles']);
+            return; 
+          }
+        });
+      
     });
     
   }

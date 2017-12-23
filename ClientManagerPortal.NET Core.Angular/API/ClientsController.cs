@@ -74,7 +74,6 @@ namespace ClientManagerPortal.NET_Core.Angular.API
         [Route("api/Clients")]
         public IActionResult GetAll()
         {
-            
             List<ClientPresistance> res = mapper.Map<List<Client>, List<ClientPresistance>>(clients);
             return Ok(res);
         }
@@ -84,15 +83,7 @@ namespace ClientManagerPortal.NET_Core.Angular.API
         public IActionResult GetOne(int id)
         {
             Client client;
-            try
-            {
-                client = clients.Find(c => c.Id == id);
-            }
-
-            catch(Exception ex)
-            {
-                return NotFound();
-            }
+            client = clients.SingleOrDefault(c=>c.Id==id);
             
             return Ok(client);
         }

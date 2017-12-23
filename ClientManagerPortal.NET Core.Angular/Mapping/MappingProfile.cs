@@ -8,7 +8,8 @@ namespace ClientManagerPortal.NET_Core.Angular.Mapping
     public class MappingProfile : Profile
     {
         public MappingProfile(){
-            CreateMap<Client, ClientPresistance>().ReverseMap();
+            CreateMap<Client, ClientPresistance>()
+                .ForMember(cp => cp.Projects, opt => opt.MapFrom(c=>c.Projects.Count));
             
         }
     }

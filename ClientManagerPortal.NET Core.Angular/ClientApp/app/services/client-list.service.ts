@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
-import { Http } from '@angular/http';
+import { Http  } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ClientListService implements OnInit{
@@ -8,51 +9,20 @@ export class ClientListService implements OnInit{
     
   }
   clients:any[]=[];
+  singleClient:any=null;
   constructor(private http:Http) { 
     this.http.get("http://localhost:51931/api/Clients").subscribe(res => this.clients=res.json());
   }
   public getClient(){
     
     this.http.get("http://localhost:51931/api/Clients").subscribe(res => this.clients=res.json());
-    
-    
-    /*
-    var client1={
-      Id:1,
-      Name:"Client 1",
-      Projects:[
-        {
-          Id: 1,
-          Name: "Project 1"
-        },
-        {
-          Id: 2,
-          Name: "Project 2"
-        }
-      ]
-    };
-    var client2={
-      Id:2,
-      Name:"Client 2",
-      Projects:[
-        {
-          Id: 1,
-          Name: "Project 1"
-        },
-        {
-          Id: 2,
-          Name: "Project 2"
-        },
-        {
-          Id: 3,
-          Name: "Project 3"
-        }
-      ]
-    };
-    
-    this.clients.push(client1);
-    this.clients.push(client2);
-    */
+  }
+
+  public getOneClient(id:number){
+    console.log("ID: "+id);
+    var url = "http://localhost:51931/api/Clients/"+id;
+    return this.http.get(url)
+      .map(res => res.json());
   }
 
   public deleteClient(id:number){
