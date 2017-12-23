@@ -6,8 +6,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
-import { PortalComponent } from './components/portal/portal.component';
 import { TaskListItemComponent } from './components/task-list-item/task-list-item.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -15,8 +15,8 @@ import { TaskListItemComponent } from './components/task-list-item/task-list-ite
     declarations: [
         AppComponent,
         NavMenuComponent,
-        PortalComponent,
         TaskListItemComponent,
+        HomeComponent,
         
     ],
     imports: [
@@ -25,7 +25,7 @@ import { TaskListItemComponent } from './components/task-list-item/task-list-ite
         FormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'portal', pathMatch: 'full' },
-            { path: 'portal', component: PortalComponent },
+            { path: 'portal', component: HomeComponent },
             { path: 'portal/:id', component: TaskListItemComponent },
             { path: '**', redirectTo: 'portal' }
         ])

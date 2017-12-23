@@ -1,5 +1,4 @@
-
-
+<ng-container *ngIf="selectedItem">
 <h2>{{selectedItem.name}}</h2>
 <hr/>
 
@@ -15,11 +14,14 @@
     </form>
 </div>
 
-<div *ngIf="selectedItem.projects.length == 0">
-    No item found
-</div>
+    <div *ngIf="selectedItem.projects.length == 0">
+        No item found
+    </div>
 
 
-<ul>
-  <li *ngFor="let item of selectedItem.projects">{{item.name}}</li>
-</ul>
+
+    <ul>
+    <li *ngFor="let item of selectedItem.projects">{{item.name}}</li>
+    </ul>
+
+</ng-container>

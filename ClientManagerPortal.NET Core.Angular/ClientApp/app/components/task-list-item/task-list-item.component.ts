@@ -6,7 +6,7 @@ import { ClientListService } from '../../services/client-list.service';
   templateUrl: './task-list-item.component.html',
   styleUrls: ['./task-list-item.component.css']
 })
-export class TaskListItemComponent implements OnInit {
+export class TaskListItemComponent{
 
   selectedItem:any;
   clients:any[]=[];
@@ -14,18 +14,14 @@ export class TaskListItemComponent implements OnInit {
 
   constructor(private activatedRoute:ActivatedRoute, 
               private route:Router, private clientList:ClientListService ) {
-
-    
     this.newProject={
-      Id:0,
-      Name:""
+      id:0,
+      name:""
     }
     
     this.route.events.subscribe(path => {
       if(path.constructor.name==="NavigationEnd"){
         this.sub=this.activatedRoute.snapshot.paramMap.get('id');
-        
-        
       }
       this.clientList.getOneClient(this.sub)
       .subscribe(
@@ -36,9 +32,7 @@ export class TaskListItemComponent implements OnInit {
             return; 
           }
         });
-      
     });
-    
   }
 
   addProject(){
@@ -53,8 +47,4 @@ export class TaskListItemComponent implements OnInit {
   
   id: number;
   private sub: any;
-  ngOnInit() {
-    
-  }
-
 }

@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "70fc71bd2750ad4dec8b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "6985c07058ffcee7a8d6"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1658,9 +1658,9 @@ function getBaseUrl() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_app_app_component__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_navmenu_navmenu_component__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_portal_portal_component__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_task_list_item_task_list_item_component__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_navmenu_navmenu_component__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_task_list_item_task_list_item_component__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1684,8 +1684,8 @@ var AppModuleShared = (function () {
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_5__components_app_app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_6__components_navmenu_navmenu_component__["a" /* NavMenuComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__components_portal_portal_component__["a" /* PortalComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__components_task_list_item_task_list_item_component__["a" /* TaskListItemComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__components_task_list_item_task_list_item_component__["a" /* TaskListItemComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
@@ -1693,8 +1693,8 @@ var AppModuleShared = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["RouterModule"].forRoot([
                     { path: '', redirectTo: 'portal', pathMatch: 'full' },
-                    { path: 'portal', component: __WEBPACK_IMPORTED_MODULE_7__components_portal_portal_component__["a" /* PortalComponent */] },
-                    { path: 'portal/:id', component: __WEBPACK_IMPORTED_MODULE_8__components_task_list_item_task_list_item_component__["a" /* TaskListItemComponent */] },
+                    { path: 'portal', component: __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */] },
+                    { path: 'portal/:id', component: __WEBPACK_IMPORTED_MODULE_7__components_task_list_item_task_list_item_component__["a" /* TaskListItemComponent */] },
                     { path: '**', redirectTo: 'portal' }
                 ])
             ]
@@ -1707,6 +1707,41 @@ var AppModuleShared = (function () {
 
 /***/ }),
 /* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var HomeComponent = (function () {
+    function HomeComponent() {
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+    };
+    HomeComponent = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-home',
+            template: __webpack_require__(26),
+            styles: [__webpack_require__(36)]
+        }),
+        __metadata("design:paramtypes", [])
+    ], HomeComponent);
+    return HomeComponent;
+}());
+
+
+
+/***/ }),
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1766,127 +1801,12 @@ var NavMenuComponent = (function () {
     NavMenuComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
             selector: 'nav-menu',
-            template: __webpack_require__(26),
-            styles: [__webpack_require__(36)]
+            template: __webpack_require__(27),
+            styles: [__webpack_require__(37)]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__services_client_list_service__["a" /* ClientListService */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]])
     ], NavMenuComponent);
     return NavMenuComponent;
-}());
-
-
-
-/***/ }),
-/* 16 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PortalComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var PortalComponent = (function () {
-    function PortalComponent() {
-        this.clients = [];
-        this.openAddClientBox = false;
-        this.validationMessage = "";
-        this.selectedClient = null;
-        this.newClient = {
-            Id: 0,
-            Name: "",
-            Projects: []
-        };
-        this.newProject = {
-            Id: 0,
-            Name: ""
-        };
-        var client1 = {
-            Id: 1,
-            Name: "Client 1",
-            Projects: [
-                {
-                    Id: 1,
-                    Name: "Project 1"
-                },
-                {
-                    Id: 2,
-                    Name: "Project 2"
-                }
-            ]
-        };
-        var client2 = {
-            Id: 2,
-            Name: "Client 2",
-            Projects: [
-                {
-                    Id: 1,
-                    Name: "Project 1"
-                },
-                {
-                    Id: 2,
-                    Name: "Project 2"
-                },
-                {
-                    Id: 3,
-                    Name: "Project 3"
-                }
-            ]
-        };
-        this.clients.push(client1);
-        this.clients.push(client2);
-        this.newProject = {
-            Id: 0,
-            Name: ""
-        };
-    }
-    PortalComponent.prototype.clickItem = function (item) {
-        this.selectedClient = item;
-    };
-    PortalComponent.prototype.DisplayAddClientBox = function () {
-        this.openAddClientBox = true;
-        console.log(this.openAddClientBox);
-    };
-    PortalComponent.prototype.addProject = function () {
-        this.selectedClient.Projects.push(this.newProject);
-        this.newProject = {
-            Id: 0,
-            Name: ""
-        };
-    };
-    PortalComponent.prototype.addClient = function () {
-        if (this.newClient.Name == "") {
-            this.validationMessage = "Please type something.";
-            return;
-        }
-        this.clients.push(this.newClient);
-        this.newClient = {
-            Id: 0,
-            Name: "",
-            Projects: []
-        };
-        this.openAddClientBox = false;
-    };
-    PortalComponent.prototype.ngOnInit = function () {
-    };
-    PortalComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-portal',
-            template: __webpack_require__(27),
-            styles: [
-                __webpack_require__(37),
-            ]
-        }),
-        __metadata("design:paramtypes", [])
-    ], PortalComponent);
-    return PortalComponent;
 }());
 
 
@@ -1920,8 +1840,8 @@ var TaskListItemComponent = (function () {
         this.clientList = clientList;
         this.clients = [];
         this.newProject = {
-            Id: 0,
-            Name: ""
+            id: 0,
+            name: ""
         };
         this.route.events.subscribe(function (path) {
             if (path.constructor.name === "NavigationEnd") {
@@ -1944,8 +1864,6 @@ var TaskListItemComponent = (function () {
         };
         this.clientList.deleteClient(1);
         console.log(this.clientList.clients);
-    };
-    TaskListItemComponent.prototype.ngOnInit = function () {
     };
     TaskListItemComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -1984,7 +1902,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "li .glyphicon {\r\n    margin-right: 10px;\r\n}\r\n\r\n/* Highlighting rules for nav menu items */\r\nli.link-active a,\r\nli.link-active a:hover,\r\nli.link-active a:focus {\r\n    background-color: #4189C7;\r\n    color: white;\r\n}\r\n\r\n/* Keep the nav menu independent of scrolling and on top of other items */\r\n.main-nav {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    z-index: 1;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    /* On small screens, convert the nav menu to a vertical sidebar */\r\n    .main-nav {\r\n        height: 100%;\r\n        width: calc(25% - 20px);\r\n    }\r\n    .navbar {\r\n        border-radius: 0px;\r\n        border-width: 0px;\r\n        height: 100%;\r\n    }\r\n    .navbar-header {\r\n        float: none;\r\n    }\r\n    .navbar-collapse {\r\n        border-top: 1px solid #444;\r\n        padding: 0px;\r\n    }\r\n    .navbar ul {\r\n        float: none;\r\n    }\r\n    .navbar li {\r\n        float: none;\r\n        font-size: 15px;\r\n        margin: 6px;\r\n    }\r\n    .navbar li a {\r\n        padding: 10px 16px;\r\n        border-radius: 4px;\r\n    }\r\n    .navbar a {\r\n        /* If a menu item's text is too long, truncate it */\r\n        width: 100%;\r\n        white-space: nowrap;\r\n        overflow: hidden;\r\n        text-overflow: ellipsis;\r\n    }\r\n}\r\n\r\n.add_new .col-md-10{padding:5px;}\r\n.add_new .col-md-2{padding:0}\r\n.add_new .solid_button{\r\n    background: transparent;\r\n    border: none;\r\n    margin-top: 4px;\r\n}\r\n.btn-plus, .add_new .label-danger{margin-left:5px;}\r\n.btn-plus-div{text-align: right; margin-right: 5px; margin-top:5px;}", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -1998,7 +1916,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "li{\r\n    list-style: none;\r\n    background: #f9f9f9;\r\n    padding: 5px;\r\n    cursor:pointer\r\n}\r\nli:hover{\r\n    background: #b39d9d\r\n}\r\nul{\r\n    padding: 0;\r\n}\r\n.dialogue{margin-top: 10px;}\r\n.dialogue .col-md-6{padding: 0}\r\n.dialogue .btn-save{margin-left: 3px}\r\n.solid_button{\r\n    padding: 0;\r\n    margin: 0;\r\n    border: 0;\r\n    background: transparent;\r\n}\r\n", ""]);
+exports.push([module.i, "li .glyphicon {\r\n    margin-right: 10px;\r\n}\r\n\r\n/* Highlighting rules for nav menu items */\r\nli.link-active a,\r\nli.link-active a:hover,\r\nli.link-active a:focus {\r\n    background-color: #4189C7;\r\n    color: white;\r\n}\r\n\r\n/* Keep the nav menu independent of scrolling and on top of other items */\r\n.main-nav {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    z-index: 1;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    /* On small screens, convert the nav menu to a vertical sidebar */\r\n    .main-nav {\r\n        height: 100%;\r\n        width: calc(25% - 20px);\r\n    }\r\n    .navbar {\r\n        border-radius: 0px;\r\n        border-width: 0px;\r\n        height: 100%;\r\n    }\r\n    .navbar-header {\r\n        float: none;\r\n    }\r\n    .navbar-collapse {\r\n        border-top: 1px solid #444;\r\n        padding: 0px;\r\n    }\r\n    .navbar ul {\r\n        float: none;\r\n    }\r\n    .navbar li {\r\n        float: none;\r\n        font-size: 15px;\r\n        margin: 6px;\r\n    }\r\n    .navbar li a {\r\n        padding: 10px 16px;\r\n        border-radius: 4px;\r\n    }\r\n    .navbar a {\r\n        /* If a menu item's text is too long, truncate it */\r\n        width: 100%;\r\n        white-space: nowrap;\r\n        overflow: hidden;\r\n        text-overflow: ellipsis;\r\n    }\r\n}\r\n\r\n.add_new .col-md-10{padding:5px;}\r\n.add_new .col-md-2{padding:0}\r\n.add_new .solid_button{\r\n    background: transparent;\r\n    border: none;\r\n    margin-top: 4px;\r\n}\r\n.btn-plus, .add_new .label-danger{margin-left:5px;}\r\n.btn-plus-div{text-align: right; margin-right: 5px; margin-top:5px;}", ""]);
 
 // exports
 
@@ -2353,19 +2271,19 @@ module.exports = "<div class='container-fluid'>\r\n    <div class='row'>\r\n    
 /* 26 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-inverse'>\r\n        <div class='navbar-header'>\r\n            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>\r\n                <span class='sr-only'>Toggle navigation</span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n            </button>\r\n            <a class='navbar-brand' [routerLink]=\"['/portal']\">Client Manager Portal</a>\r\n        </div>\r\n        <div class='clearfix'></div>\r\n        \r\n        <div class='navbar-collapse collapse'>\r\n            <div  *ngIf=\"openAddClientBox\" class=\"add_new\">\r\n                <form (submit)=\"addClient()\">\r\n                    <label class=\"label label-danger\">{{validationMessage}}</label>\r\n                    <div class=\"col-md-10\">\r\n                        \r\n                        <input type=\"text\" required minlength=\"1\" [(ngModel)] =\"newClient.name\" class=\"form-control \" name=\"txtClientName\"/>\r\n                    </div>\r\n                    <div class=\"col-md-2\">\r\n                        <button class=\"solid_button\" type=\"submit\"><span class=\"btn btn-save btn-primary glyphicon glyphicon-floppy-disk\"></span></button>\r\n                    </div>\r\n                    <div class=\"clearfix\"></div>  \r\n                </form>\r\n            </div>\r\n            <div *ngIf=\"!openAddClientBox\" class=\"btn-plus-div\">\r\n                <button  (click)=\"DisplayAddClientBox()\"  class=\"btn-plus btn btn-primary\">+</button>\r\n            </div>\r\n            <ul class='nav navbar-nav'>\r\n                    <li [routerLinkActive]=\"['link-active']\" \r\n                        *ngFor=\"let item of clientList.clients\" \r\n                        >\r\n                        <a [routerLink]=\"['/portal', item.id]\">\r\n                            <span class='glyphicon glyphicon-th-list'></span> {{item.name}} ({{item.projects}})\r\n                        </a>\r\n                    </li>\r\n            </ul>\r\n        </div>\r\n    \r\n        \r\n    </div>\r\n</div>\r\n";
+module.exports = "<h1>Client Management Portal</h1>";
 
 /***/ }),
 /* 27 */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"col-md-12\">\r\n    <div class=\"row\">\r\n        <form>\r\n            <input type=\"text\" class=\"form-control\" name=\"txtSearch\" placeholder=\"Search...\"/>\r\n        </form>\r\n    </div>\r\n    <div class=\"col-md-3 dialogue\">\r\n        <div  *ngIf=\"openAddClientBox\" class=\" add_new\">\r\n            <form (submit)=\"addClient()\">\r\n                <label>{{validationMessage}}</label>\r\n                <div class=\"col-md-6\">\r\n                    \r\n                    <input type=\"text\" required minlength=\"1\" [(ngModel)] =\"newClient.Name\" class=\"form-control \" name=\"txtClientName\"/>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <button class=\"solid_button\" type=\"submit\"><span class=\"btn btn-save btn-primary glyphicon glyphicon-floppy-disk\"></span></button>\r\n                </div>\r\n                <div class=\"clearfix\"></div>  \r\n            </form>\r\n        </div>\r\n        <div *ngIf=\"!openAddClientBox\">\r\n            <button (click)=\"DisplayAddClientBox()\" class=\"btn btn-primary\">+</button>\r\n        </div>\r\n        <hr/>\r\n        <ul >\r\n            <li *ngFor=\"let item of clients\" (click)=\"clickItem(item)\">{{item.Name}} ({{item.Projects.length}})</li>\r\n        </ul>\r\n    </div>\r\n    <div class=\"col-md-8\">\r\n            \r\n        <div *ngIf=\"selectedClient\">\r\n            \r\n            <div class=\"dialogue add_new\">\r\n                <form (submit)=\"addProject()\">\r\n                    <div class=\"col-md-6\">\r\n                        <input type=\"text\" [(ngModel)] =\"newProject.Name\" class=\"form-control col-md-6\" name=\"txtClientName\"/>\r\n                    </div>\r\n                    <div class=\"col-md-6\">\r\n                        <input type=\"submit\"  class=\"btn btn-primary\" value=\"Save\"/>\r\n                    </div>\r\n                    <div class=\"clearfix\"></div>  \r\n                </form>\r\n            </div>\r\n            <div *ngIf=\"selectedClient\">\r\n                <div *ngIf=\"selectedClient.Projects.length == 0\">\r\n                    No item found\r\n                </div>\r\n            </div>\r\n            \r\n            <ul>\r\n                    \r\n                <li  *ngFor=\"let item of selectedClient.Projects\" (click)=\"clickItem(item)\">\r\n                    <a [routerLink]=\"['/portal', item.Id]\">\r\n                        {{item.Name}}\r\n                    </a>\r\n                </li>\r\n            </ul>\r\n        </div>        \r\n    </div>\r\n</div>\r\n\r\n<router-outlet></router-outlet>";
+module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-inverse'>\r\n        <div class='navbar-header'>\r\n            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>\r\n                <span class='sr-only'>Toggle navigation</span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n            </button>\r\n            <a class='navbar-brand' [routerLink]=\"['/portal']\">Client Manager Portal</a>\r\n        </div>\r\n        <div class='clearfix'></div>\r\n        \r\n        <div class='navbar-collapse collapse'>\r\n            <div  *ngIf=\"openAddClientBox\" class=\"add_new\">\r\n                <form (submit)=\"addClient()\">\r\n                    <label class=\"label label-danger\">{{validationMessage}}</label>\r\n                    <div class=\"col-md-10\">\r\n                        \r\n                        <input type=\"text\" required minlength=\"1\" [(ngModel)] =\"newClient.name\" class=\"form-control \" name=\"txtClientName\"/>\r\n                    </div>\r\n                    <div class=\"col-md-2\">\r\n                        <button class=\"solid_button\" type=\"submit\"><span class=\"btn btn-save btn-primary glyphicon glyphicon-floppy-disk\"></span></button>\r\n                    </div>\r\n                    <div class=\"clearfix\"></div>  \r\n                </form>\r\n            </div>\r\n            <div *ngIf=\"!openAddClientBox\" class=\"btn-plus-div\">\r\n                <button  (click)=\"DisplayAddClientBox()\"  class=\"btn-plus btn btn-primary\">+</button>\r\n            </div>\r\n            <ul class='nav navbar-nav'>\r\n                    <li [routerLinkActive]=\"['link-active']\" \r\n                        *ngFor=\"let item of clientList.clients\" \r\n                        >\r\n                        <a [routerLink]=\"['/portal', item.id]\">\r\n                            <span class='glyphicon glyphicon-th-list'></span> {{item.name}} ({{item.projects}})\r\n                        </a>\r\n                    </li>\r\n            </ul>\r\n        </div>\r\n    \r\n        \r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 28 */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<h2>{{selectedItem.name}}</h2>\n<hr/>\n\n<div class=\"dialogue add_new\">\n    <form (submit)=\"addProject()\">\n        <div class=\"col-md-6\">\n            <input type=\"text\" [(ngModel)] =\"newProject.name\" class=\"form-control col-md-6\" name=\"txtClientName\"/>\n        </div>\n        <div class=\"col-md-6\">\n            <input type=\"submit\"  class=\"btn btn-primary\" value=\"Save\"/>\n        </div>\n        <div class=\"clearfix\"></div>  \n    </form>\n</div>\n\n<div *ngIf=\"selectedItem.projects.length == 0\">\n    No item found\n</div>\n\n\n<ul>\n  <li *ngFor=\"let item of selectedItem.projects\">{{item.name}}</li>\n</ul>\n";
+module.exports = "<ng-container *ngIf=\"selectedItem\">\n<h2>{{selectedItem.name}}</h2>\n<hr/>\n\n<div class=\"dialogue add_new\">\n    <form (submit)=\"addProject()\">\n        <div class=\"col-md-6\">\n            <input type=\"text\" [(ngModel)] =\"newProject.name\" class=\"form-control col-md-6\" name=\"txtClientName\"/>\n        </div>\n        <div class=\"col-md-6\">\n            <input type=\"submit\"  class=\"btn btn-primary\" value=\"Save\"/>\n        </div>\n        <div class=\"clearfix\"></div>  \n    </form>\n</div>\n\n    <div *ngIf=\"selectedItem.projects.length == 0\">\n        No item found\n    </div>\n\n\n\n    <ul>\n    <li *ngFor=\"let item of selectedItem.projects\">{{item.name}}</li>\n    </ul>\n\n</ng-container>";
 
 /***/ }),
 /* 29 */
