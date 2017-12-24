@@ -19,7 +19,6 @@ export class ClientListService implements OnInit{
   }
 
   public getOneClient(id:number){
-    console.log("ID: "+id);
     var url = "http://localhost:51931/api/Clients/"+id;
     return this.http.get(url)
       .map(res => res.json());

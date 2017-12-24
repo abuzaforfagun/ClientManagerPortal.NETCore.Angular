@@ -22,17 +22,21 @@ export class TaskListItemComponent{
     this.route.events.subscribe(path => {
       if(path.constructor.name==="NavigationEnd"){
         this.sub=this.activatedRoute.snapshot.paramMap.get('id');
+        this.clientList.getOneClient(this.sub)
+        .subscribe(
+          v => {
+            this.selectedItem = v
+          },
+          err => {
+            if (err.status == 404) {
+              this.route.navigate(['/vehicles']);
+              return; 
+            }
+          });
+          
       }
-      this.clientList.getOneClient(this.sub)
-      .subscribe(
-        v => this.selectedItem = v,
-        err => {
-          if (err.status == 404) {
-            this.route.navigate(['/vehicles']);
-            return; 
-          }
-        });
     });
+    
   }
 
   addProject(){
@@ -43,7 +47,7 @@ export class TaskListItemComponent{
     }
     
     this.clientList.deleteClient(1);
-    console.log(this.clientList.clients);
+    
   }
   
   id: number;

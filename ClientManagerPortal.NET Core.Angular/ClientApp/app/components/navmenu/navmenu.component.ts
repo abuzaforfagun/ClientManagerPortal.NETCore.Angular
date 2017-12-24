@@ -40,13 +40,7 @@ export class NavMenuComponent implements OnInit {
         this.newClient.id=newId;
 
         this.clientList.clients.push(this.newClient);
-        this.toastyService.error({
-            title:"Success",
-            msg:"Added successfully",
-            theme:"Bootstrap",
-            showClose:true,
-            timeout:5000
-        });
+        
         this.newClient={
           id:0,
           name:"",
