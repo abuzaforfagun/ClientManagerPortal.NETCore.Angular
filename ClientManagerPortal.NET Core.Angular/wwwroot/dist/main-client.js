@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "00a856be1777cac20819"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "16d48bacbf529b49768b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -704,20 +704,20 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(52)(__webpack_require__.s = 52);
+/******/ 	return hotCreateRequire(53)(__webpack_require__.s = 53);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports) {
 
-module.exports = vendor_4adf5b975b06d7f766a2;
+module.exports = vendor_fa279364acf017269834;
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(3);
+module.exports = (__webpack_require__(0))(1);
 
 /***/ }),
 /* 2 */
@@ -809,7 +809,7 @@ function toComment(sourceMap) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientListService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -846,6 +846,8 @@ var ClientListService = (function () {
     ClientListService.prototype.deleteClient = function (id) {
         this.http.delete("http://localhost:51931/api/Clients/" + id);
     };
+    ClientListService.prototype.add = function (client) {
+    };
     ClientListService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]])
@@ -859,7 +861,7 @@ var ClientListService = (function () {
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(39);
+module.exports = (__webpack_require__(0))(44);
 
 /***/ }),
 /* 5 */
@@ -889,8 +891,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
             selector: 'app',
-            template: __webpack_require__(25),
-            styles: [__webpack_require__(35)],
+            template: __webpack_require__(26),
+            styles: [__webpack_require__(36)],
             providers: [__WEBPACK_IMPORTED_MODULE_0__services_client_list_service__["a" /* ClientListService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__services_client_list_service__["a" /* ClientListService */]])
@@ -1100,23 +1102,29 @@ module.exports = Html5Entities;
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(41);
+module.exports = (__webpack_require__(0))(46);
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(0))(53);
+
+/***/ }),
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_reflect_metadata__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_reflect_metadata__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_reflect_metadata___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_reflect_metadata__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_zone_js__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_zone_js__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_zone_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_zone_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_bootstrap__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_bootstrap__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_bootstrap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_dynamic__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_app_browser_module__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_dynamic__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_app_browser_module__ = __webpack_require__(14);
 
 
 
@@ -1142,7 +1150,7 @@ var modulePromise = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_p
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__resourceQuery, module) {/*eslint-env browser*/
@@ -1158,7 +1166,7 @@ var options = {
   name: ''
 };
 if (true) {
-  var querystring = __webpack_require__(31);
+  var querystring = __webpack_require__(32);
   var overrides = querystring.parse(__resourceQuery.slice(1));
   if (overrides.path) options.path = overrides.path;
   if (overrides.timeout) options.timeout = overrides.timeout;
@@ -1278,11 +1286,11 @@ if (typeof window !== 'undefined') {
 }
 
 function createReporter() {
-  var strip = __webpack_require__(34);
+  var strip = __webpack_require__(35);
 
   var overlay;
   if (typeof document !== 'undefined' && options.overlay) {
-    overlay = __webpack_require__(39);
+    overlay = __webpack_require__(40);
   }
 
   var styles = {
@@ -1335,7 +1343,7 @@ function createReporter() {
   };
 }
 
-var processUpdate = __webpack_require__(40);
+var processUpdate = __webpack_require__(41);
 
 var customHandler;
 var subscribeAllHandler;
@@ -1400,16 +1408,16 @@ if (module) {
   };
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, "?path=__webpack_hmr&dynamicPublicPath=true", __webpack_require__(41)(module)))
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(0))(45);
+/* WEBPACK VAR INJECTION */}.call(exports, "?path=__webpack_hmr&dynamicPublicPath=true", __webpack_require__(42)(module)))
 
 /***/ }),
 /* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(0))(50);
+
+/***/ }),
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1592,7 +1600,7 @@ ansiHTML.reset()
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1603,15 +1611,15 @@ module.exports = function () {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* unused harmony export getBaseUrl */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_module__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_module__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_app_app_component__ = __webpack_require__(5);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1647,20 +1655,21 @@ function getBaseUrl() {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModuleShared; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_app_app_component__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_navmenu_navmenu_component__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_task_list_item_task_list_item_component__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_toasty__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_app_app_component__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_navmenu_navmenu_component__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_task_list_item_task_list_item_component__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__(16);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1676,25 +1685,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModuleShared = (function () {
     function AppModuleShared() {
     }
     AppModuleShared = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_5__components_app_app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__components_navmenu_navmenu_component__["a" /* NavMenuComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__components_task_list_item_task_list_item_component__["a" /* TaskListItemComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_6__components_app_app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__components_navmenu_navmenu_component__["a" /* NavMenuComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__components_task_list_item_task_list_item_component__["a" /* TaskListItemComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
+                __WEBPACK_IMPORTED_MODULE_5_ng2_toasty__["ToastyModule"].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["RouterModule"].forRoot([
                     { path: '', redirectTo: 'portal', pathMatch: 'full' },
-                    { path: 'portal', component: __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */] },
-                    { path: 'portal/:id', component: __WEBPACK_IMPORTED_MODULE_7__components_task_list_item_task_list_item_component__["a" /* TaskListItemComponent */] },
+                    { path: 'portal', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
+                    { path: 'portal/:id', component: __WEBPACK_IMPORTED_MODULE_8__components_task_list_item_task_list_item_component__["a" /* TaskListItemComponent */] },
                     { path: '**', redirectTo: 'portal' }
                 ])
             ]
@@ -1706,7 +1717,7 @@ var AppModuleShared = (function () {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1730,8 +1741,8 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-home',
-            template: __webpack_require__(26),
-            styles: [__webpack_require__(36)]
+            template: __webpack_require__(27),
+            styles: [__webpack_require__(37)]
         }),
         __metadata("design:paramtypes", [])
     ], HomeComponent);
@@ -1741,7 +1752,7 @@ var HomeComponent = (function () {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1749,6 +1760,7 @@ var HomeComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_client_list_service__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_toasty__ = __webpack_require__(8);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1761,10 +1773,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var NavMenuComponent = (function () {
-    function NavMenuComponent(clientList, http) {
+    function NavMenuComponent(clientList, http, toastyService) {
         this.clientList = clientList;
         this.http = http;
+        this.toastyService = toastyService;
         this.tmpclients = [];
         this.clients = [];
         this.validationMessage = "";
@@ -1780,14 +1794,16 @@ var NavMenuComponent = (function () {
         this.clients = this.clientList.clients;
     };
     NavMenuComponent.prototype.addClient = function () {
-        if (this.newClient.Name == "") {
-            this.validationMessage = "Please type something.";
-            return;
-        }
         var newId = this.clientList.clients[this.clientList.clients.length - 1].id + 1;
         this.newClient.id = newId;
-        console.log(this.clientList.clients);
         this.clientList.clients.push(this.newClient);
+        this.toastyService.error({
+            title: "Success",
+            msg: "Added successfully",
+            theme: "Bootstrap",
+            showClose: true,
+            timeout: 5000
+        });
         this.newClient = {
             id: 0,
             name: "",
@@ -1801,10 +1817,12 @@ var NavMenuComponent = (function () {
     NavMenuComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
             selector: 'nav-menu',
-            template: __webpack_require__(27),
-            styles: [__webpack_require__(37)]
+            template: __webpack_require__(28),
+            styles: [__webpack_require__(38)]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__services_client_list_service__["a" /* ClientListService */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__services_client_list_service__["a" /* ClientListService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"],
+            __WEBPACK_IMPORTED_MODULE_3_ng2_toasty__["ToastyService"]])
     ], NavMenuComponent);
     return NavMenuComponent;
 }());
@@ -1812,7 +1830,7 @@ var NavMenuComponent = (function () {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1868,8 +1886,8 @@ var TaskListItemComponent = (function () {
     TaskListItemComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-task-list-item',
-            template: __webpack_require__(28),
-            styles: [__webpack_require__(38)]
+            template: __webpack_require__(29),
+            styles: [__webpack_require__(39)]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["ActivatedRoute"],
             __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_2__services_client_list_service__["a" /* ClientListService */]])
@@ -1880,7 +1898,7 @@ var TaskListItemComponent = (function () {
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -1894,20 +1912,6 @@ exports.push([module.i, "@media (max-width: 767px) {\r\n    /* On small screens,
 
 
 /***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
 /* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1916,7 +1920,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "li .glyphicon {\r\n    margin-right: 10px;\r\n}\r\n\r\n/* Highlighting rules for nav menu items */\r\nli.link-active a,\r\nli.link-active a:hover,\r\nli.link-active a:focus {\r\n    background-color: #4189C7;\r\n    color: white;\r\n}\r\n\r\n/* Keep the nav menu independent of scrolling and on top of other items */\r\n.main-nav {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    z-index: 1;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    /* On small screens, convert the nav menu to a vertical sidebar */\r\n    .main-nav {\r\n        height: 100%;\r\n        width: calc(25% - 20px);\r\n    }\r\n    .navbar {\r\n        border-radius: 0px;\r\n        border-width: 0px;\r\n        height: 100%;\r\n    }\r\n    .navbar-header {\r\n        float: none;\r\n    }\r\n    .navbar-collapse {\r\n        border-top: 1px solid #444;\r\n        padding: 0px;\r\n    }\r\n    .navbar ul {\r\n        float: none;\r\n    }\r\n    .navbar li {\r\n        float: none;\r\n        font-size: 15px;\r\n        margin: 6px;\r\n    }\r\n    .navbar li a {\r\n        padding: 10px 16px;\r\n        border-radius: 4px;\r\n    }\r\n    .navbar a {\r\n        /* If a menu item's text is too long, truncate it */\r\n        width: 100%;\r\n        white-space: nowrap;\r\n        overflow: hidden;\r\n        text-overflow: ellipsis;\r\n    }\r\n}\r\n\r\n.add_new .col-md-10{padding:5px;}\r\n.add_new .col-md-2{padding:0}\r\n.add_new .solid_button{\r\n    background: transparent;\r\n    border: none;\r\n    margin-top: 4px;\r\n}\r\n.btn-plus, .add_new .label-danger{margin-left:5px;}\r\n.btn-plus-div{text-align: right; margin-right: 5px; margin-top:5px;}", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -1930,7 +1934,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "li .glyphicon {\r\n    margin-right: 10px;\r\n}\r\n\r\n/* Highlighting rules for nav menu items */\r\nli.link-active a,\r\nli.link-active a:hover,\r\nli.link-active a:focus {\r\n    background-color: #4189C7;\r\n    color: white;\r\n}\r\n\r\n/* Keep the nav menu independent of scrolling and on top of other items */\r\n.main-nav {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    z-index: 1;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    /* On small screens, convert the nav menu to a vertical sidebar */\r\n    .main-nav {\r\n        height: 100%;\r\n        width: calc(25% - 20px);\r\n    }\r\n    .navbar {\r\n        border-radius: 0px;\r\n        border-width: 0px;\r\n        height: 100%;\r\n    }\r\n    .navbar-header {\r\n        float: none;\r\n    }\r\n    .navbar-collapse {\r\n        border-top: 1px solid #444;\r\n        padding: 0px;\r\n    }\r\n    .navbar ul {\r\n        float: none;\r\n    }\r\n    .navbar li {\r\n        float: none;\r\n        font-size: 15px;\r\n        margin: 6px;\r\n    }\r\n    .navbar li a {\r\n        padding: 10px 16px;\r\n        border-radius: 4px;\r\n    }\r\n    .navbar a {\r\n        /* If a menu item's text is too long, truncate it */\r\n        width: 100%;\r\n        white-space: nowrap;\r\n        overflow: hidden;\r\n        text-overflow: ellipsis;\r\n    }\r\n}\r\n\r\n.add_new .col-md-10{padding:5px;}\r\n.add_new .col-md-2{padding:0}\r\n.add_new .solid_button{\r\n    background: transparent;\r\n    border: none;\r\n    margin-top: 4px;\r\n}\r\n.btn-plus, .add_new .label-danger{margin-left:5px;}\r\n.btn-plus-div{text-align: right; margin-right: 5px; margin-top:5px;}", ""]);
 
 // exports
 
@@ -1939,16 +1943,30 @@ exports.push([module.i, "", ""]);
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
+exports = module.exports = __webpack_require__(2)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
 module.exports = {
-  XmlEntities: __webpack_require__(24),
-  Html4Entities: __webpack_require__(23),
+  XmlEntities: __webpack_require__(25),
+  Html4Entities: __webpack_require__(24),
   Html5Entities: __webpack_require__(6),
   AllHtmlEntities: __webpack_require__(6)
 };
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports) {
 
 var HTML_ALPHA = ['apos', 'nbsp', 'iexcl', 'cent', 'pound', 'curren', 'yen', 'brvbar', 'sect', 'uml', 'copy', 'ordf', 'laquo', 'not', 'shy', 'reg', 'macr', 'deg', 'plusmn', 'sup2', 'sup3', 'acute', 'micro', 'para', 'middot', 'cedil', 'sup1', 'ordm', 'raquo', 'frac14', 'frac12', 'frac34', 'iquest', 'Agrave', 'Aacute', 'Acirc', 'Atilde', 'Auml', 'Aring', 'Aelig', 'Ccedil', 'Egrave', 'Eacute', 'Ecirc', 'Euml', 'Igrave', 'Iacute', 'Icirc', 'Iuml', 'ETH', 'Ntilde', 'Ograve', 'Oacute', 'Ocirc', 'Otilde', 'Ouml', 'times', 'Oslash', 'Ugrave', 'Uacute', 'Ucirc', 'Uuml', 'Yacute', 'THORN', 'szlig', 'agrave', 'aacute', 'acirc', 'atilde', 'auml', 'aring', 'aelig', 'ccedil', 'egrave', 'eacute', 'ecirc', 'euml', 'igrave', 'iacute', 'icirc', 'iuml', 'eth', 'ntilde', 'ograve', 'oacute', 'ocirc', 'otilde', 'ouml', 'divide', 'oslash', 'ugrave', 'uacute', 'ucirc', 'uuml', 'yacute', 'thorn', 'yuml', 'quot', 'amp', 'lt', 'gt', 'OElig', 'oelig', 'Scaron', 'scaron', 'Yuml', 'circ', 'tilde', 'ensp', 'emsp', 'thinsp', 'zwnj', 'zwj', 'lrm', 'rlm', 'ndash', 'mdash', 'lsquo', 'rsquo', 'sbquo', 'ldquo', 'rdquo', 'bdquo', 'dagger', 'Dagger', 'permil', 'lsaquo', 'rsaquo', 'euro', 'fnof', 'Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi', 'Omega', 'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigmaf', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'thetasym', 'upsih', 'piv', 'bull', 'hellip', 'prime', 'Prime', 'oline', 'frasl', 'weierp', 'image', 'real', 'trade', 'alefsym', 'larr', 'uarr', 'rarr', 'darr', 'harr', 'crarr', 'lArr', 'uArr', 'rArr', 'dArr', 'hArr', 'forall', 'part', 'exist', 'empty', 'nabla', 'isin', 'notin', 'ni', 'prod', 'sum', 'minus', 'lowast', 'radic', 'prop', 'infin', 'ang', 'and', 'or', 'cap', 'cup', 'int', 'there4', 'sim', 'cong', 'asymp', 'ne', 'equiv', 'le', 'ge', 'sub', 'sup', 'nsub', 'sube', 'supe', 'oplus', 'otimes', 'perp', 'sdot', 'lceil', 'rceil', 'lfloor', 'rfloor', 'lang', 'rang', 'loz', 'spades', 'clubs', 'hearts', 'diams'];
@@ -2101,7 +2119,7 @@ module.exports = Html4Entities;
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 var ALPHA_INDEX = {
@@ -2262,31 +2280,31 @@ module.exports = XmlEntities;
 
 
 /***/ }),
-/* 25 */
-/***/ (function(module, exports) {
-
-module.exports = "<div class='container-fluid'>\r\n    <div class='row'>\r\n        <div class='col-sm-3'>\r\n            <nav-menu></nav-menu>\r\n        </div>\r\n        <div class='col-sm-9 body-content'>\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
-
-/***/ }),
 /* 26 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Client Management Portal</h1>";
+module.exports = "<ng2-toasty [position]=\"'top-right'\"></ng2-toasty>\r\n<div class='container-fluid'>\r\n    <div class='row'>\r\n        <div class='col-sm-3'>\r\n            <nav-menu></nav-menu>\r\n        </div>\r\n        <div class='col-sm-9 body-content'>\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 27 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-inverse'>\r\n        <div class='navbar-header'>\r\n            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>\r\n                <span class='sr-only'>Toggle navigation</span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n            </button>\r\n            <a class='navbar-brand' [routerLink]=\"['/portal']\">Client Manager Portal</a>\r\n        </div>\r\n        <div class='clearfix'></div>\r\n        \r\n        <div class='navbar-collapse collapse'>\r\n            <div  *ngIf=\"openAddClientBox\" class=\"add_new\">\r\n                <form #form=\"ngForm\" ngNativeValidate (submit)=\"addClient()\">\r\n                    <label class=\"label label-danger\">{{validationMessage}}</label>\r\n                    <div class=\"col-md-10\">\r\n                        <input type=\"text\" required #clientName = \"ngModel\" [(ngModel)] =\"newClient.name\" class=\"form-control \" name=\"txtClientName\"/>\r\n                    </div>\r\n                    \r\n                    <div class=\"col-md-2\">\r\n                        <button [disabled]=\"!form.valid\" class=\"solid_button\"><span class=\"btn btn-save btn-primary glyphicon glyphicon-floppy-disk\"></span></button>\r\n                    </div>\r\n                    <div class=\"alert alert-danger\" *ngIf=\"clientName.touched && !clientName.valid\">Please enter a name.</div>\r\n                    <div class=\"clearfix\"></div>  \r\n                </form>\r\n            </div>\r\n            <div *ngIf=\"!openAddClientBox\" class=\"btn-plus-div\">\r\n                <button  (click)=\"DisplayAddClientBox()\"  class=\"btn-plus btn btn-primary\">+</button>\r\n            </div>\r\n            <ul class='nav navbar-nav'>\r\n                    <li [routerLinkActive]=\"['link-active']\" \r\n                        *ngFor=\"let item of clientList.clients\" \r\n                        >\r\n                        <a [routerLink]=\"['/portal', item.id]\">\r\n                            <span class='glyphicon glyphicon-th-list'></span> {{item.name}} ({{item.projects}})\r\n                        </a>\r\n                    </li>\r\n            </ul>\r\n        </div>\r\n    \r\n        \r\n    </div>\r\n</div>\r\n";
+module.exports = "<h1>Client Management Portal</h1>";
 
 /***/ }),
 /* 28 */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"selectedItem\">\n<h2>{{selectedItem.name}}</h2>\n<hr/>\n\n<div class=\"dialogue add_new\">\n    <form (submit)=\"addProject()\">\n        <div class=\"col-md-6\">\n            <input type=\"text\" [(ngModel)] =\"newProject.name\" class=\"form-control col-md-6\" name=\"txtClientName\"/>\n        </div>\n        <div class=\"col-md-6\">\n            <input type=\"submit\"  class=\"btn btn-primary\" value=\"Save\"/>\n        </div>\n        <div class=\"clearfix\"></div>  \n    </form>\n</div>\n    <div *ngIf=\"selectedItem.projects.length == 0\">\n        No item found\n    </div>\n    <ul>\n    <li *ngFor=\"let item of selectedItem.projects\">{{item.name}}</li>\n    </ul>\n\n</ng-container>";
+module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-inverse'>\r\n        <div class='navbar-header'>\r\n            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>\r\n                <span class='sr-only'>Toggle navigation</span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n            </button>\r\n            <a class='navbar-brand' [routerLink]=\"['/portal']\">Client Manager Portal</a>\r\n        </div>\r\n        <div class='clearfix'></div>\r\n        \r\n        <div class='navbar-collapse collapse'>\r\n            <div  *ngIf=\"openAddClientBox\" class=\"add_new\">\r\n                <form #form=\"ngForm\" novalidate ngNativeValidate (submit)=\"addClient()\">\r\n                    <label class=\"label label-danger\">{{validationMessage}}</label>\r\n                    <div class=\"col-md-10\">\r\n                        <input type=\"text\" required #clientName = \"ngModel\" [(ngModel)] =\"newClient.name\" class=\"form-control \" name=\"txtClientName\"/>\r\n                    </div>\r\n                    \r\n                    <div class=\"col-md-2\">\r\n                        <button [disabled]=\"!form.valid\" class=\"solid_button\"><span class=\"btn btn-save btn-primary glyphicon glyphicon-floppy-disk\"></span></button>\r\n                    </div>\r\n                    <div class=\"alert alert-danger\" *ngIf=\"clientName.touched && !clientName.valid\">Please enter a name.</div>\r\n                    <div class=\"clearfix\"></div>  \r\n                </form>\r\n            </div>\r\n            <div *ngIf=\"!openAddClientBox\" class=\"btn-plus-div\">\r\n                <button  (click)=\"DisplayAddClientBox()\"  class=\"btn-plus btn btn-primary\">+</button>\r\n            </div>\r\n            <ul class='nav navbar-nav'>\r\n                    <li [routerLinkActive]=\"['link-active']\" \r\n                        *ngFor=\"let item of clientList.clients\" \r\n                        >\r\n                        <a [routerLink]=\"['/portal', item.id]\">\r\n                            <span class='glyphicon glyphicon-th-list'></span> {{item.name}} ({{item.projects}})\r\n                        </a>\r\n                    </li>\r\n            </ul>\r\n        </div>\r\n    \r\n        \r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 29 */
+/***/ (function(module, exports) {
+
+module.exports = "<ng-container *ngIf=\"selectedItem\">\n<h2>{{selectedItem.name}}</h2>\n<hr/>\n\n<div class=\"dialogue add_new\">\n    <form (submit)=\"addProject()\">\n        <div class=\"col-md-6\">\n            <input type=\"text\" [(ngModel)] =\"newProject.name\" class=\"form-control col-md-6\" name=\"txtClientName\"/>\n        </div>\n        <div class=\"col-md-6\">\n            <input type=\"submit\"  class=\"btn btn-primary\" value=\"Save\"/>\n        </div>\n        <div class=\"clearfix\"></div>  \n    </form>\n</div>\n    <div *ngIf=\"selectedItem.projects.length == 0\">\n        No item found\n    </div>\n    <ul>\n    <li *ngFor=\"let item of selectedItem.projects\">{{item.name}}</li>\n    </ul>\n\n</ng-container>";
+
+/***/ }),
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2377,7 +2395,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2469,18 +2487,18 @@ var objectKeys = Object.keys || function (obj) {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(29);
-exports.encode = exports.stringify = __webpack_require__(30);
+exports.decode = exports.parse = __webpack_require__(30);
+exports.encode = exports.stringify = __webpack_require__(31);
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {/*! *****************************************************************************
@@ -3608,18 +3626,7 @@ var Reflect;
             Function("return this;")());
 })(Reflect || (Reflect = {}));
 //# sourceMappingURL=Reflect.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43), __webpack_require__(50)))
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(42);
-var map_1 = __webpack_require__(44);
-Observable_1.Observable.prototype.map = map_1.map;
-//# sourceMappingURL=map.js.map
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(44), __webpack_require__(52)))
 
 /***/ }),
 /* 34 */
@@ -3627,26 +3634,23 @@ Observable_1.Observable.prototype.map = map_1.map;
 
 "use strict";
 
-var ansiRegex = __webpack_require__(12)();
-
-module.exports = function (str) {
-	return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
-};
-
+var Observable_1 = __webpack_require__(43);
+var map_1 = __webpack_require__(45);
+Observable_1.Observable.prototype.map = map_1.map;
+//# sourceMappingURL=map.js.map
 
 /***/ }),
 /* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
 
-        var result = __webpack_require__(18);
+var ansiRegex = __webpack_require__(13)();
 
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
+module.exports = function (str) {
+	return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
+};
+
 
 /***/ }),
 /* 36 */
@@ -3694,6 +3698,20 @@ module.exports = function (str) {
 /* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
+
+        var result = __webpack_require__(22);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /*eslint-env browser*/
 
 var clientOverlay = document.createElement('div');
@@ -3720,7 +3738,7 @@ for (var key in styles) {
   clientOverlay.style[key] = styles[key];
 }
 
-var ansiHTML = __webpack_require__(11);
+var ansiHTML = __webpack_require__(12);
 var colors = {
   reset: ['transparent', 'transparent'],
   black: '181818',
@@ -3735,7 +3753,7 @@ var colors = {
 };
 ansiHTML.setColors(colors);
 
-var Entities = __webpack_require__(22).AllHtmlEntities;
+var Entities = __webpack_require__(23).AllHtmlEntities;
 var entities = new Entities();
 
 exports.showProblems =
@@ -3776,7 +3794,7 @@ function problemType (type) {
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -3914,7 +3932,7 @@ module.exports = function(hash, moduleMap, options) {
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -3942,16 +3960,10 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(0))(0);
-
-/***/ }),
 /* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(23);
+module.exports = (__webpack_require__(0))(0);
 
 /***/ }),
 /* 44 */
@@ -3963,19 +3975,19 @@ module.exports = (__webpack_require__(0))(28);
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(38);
+module.exports = (__webpack_require__(0))(33);
 
 /***/ }),
 /* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(40);
+module.exports = (__webpack_require__(0))(43);
 
 /***/ }),
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(42);
+module.exports = (__webpack_require__(0))(45);
 
 /***/ }),
 /* 48 */
@@ -3987,27 +3999,33 @@ module.exports = (__webpack_require__(0))(47);
 /* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(6);
+module.exports = (__webpack_require__(0))(54);
 
 /***/ }),
 /* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(8);
+module.exports = (__webpack_require__(0))(6);
 
 /***/ }),
 /* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(9);
+module.exports = (__webpack_require__(0))(8);
 
 /***/ }),
 /* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = (__webpack_require__(0))(9);
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(11);
 __webpack_require__(10);
-__webpack_require__(9);
-module.exports = __webpack_require__(8);
+module.exports = __webpack_require__(9);
 
 
 /***/ })

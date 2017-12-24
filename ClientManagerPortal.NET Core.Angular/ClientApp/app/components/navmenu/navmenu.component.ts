@@ -2,6 +2,7 @@ import { ClientListService } from './../../services/client-list.service';
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { ToastyService } from 'ng2-toasty';
 
 @Component({
     selector: 'nav-menu',
@@ -20,7 +21,9 @@ export class NavMenuComponent implements OnInit {
     validationMessage:string="";
     openAddClientBox=false;
 
-    constructor(private clientList:ClientListService, private http:Http){
+    constructor(private clientList:ClientListService, 
+                private http:Http,
+                private toastyService:ToastyService){
       
         this.newClient ={
             id:0,
@@ -33,15 +36,17 @@ export class NavMenuComponent implements OnInit {
     addClient()
     {
         
-        if(this.newClient.Name==""){
-          this.validationMessage="Please type something.";
-          return;
-        }
         var newId = this.clientList.clients[this.clientList.clients.length -1].id +1;
         this.newClient.id=newId;
-        console.log(this.clientList.clients);
+
         this.clientList.clients.push(this.newClient);
-        
+        this.toastyService.error({
+            title:"Success",
+            msg:"Added successfully",
+            theme:"Bootstrap",
+            showClose:true,
+            timeout:5000
+        });
         this.newClient={
           id:0,
           name:"",

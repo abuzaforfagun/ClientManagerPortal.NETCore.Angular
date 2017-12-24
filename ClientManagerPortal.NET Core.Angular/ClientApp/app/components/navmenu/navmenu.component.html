@@ -13,7 +13,7 @@
         
         <div class='navbar-collapse collapse'>
             <div  *ngIf="openAddClientBox" class="add_new">
-                <form #form="ngForm" ngNativeValidate (submit)="addClient()">
+                <form #form="ngForm" novalidate ngNativeValidate (submit)="addClient()">
                     <label class="label label-danger">{{validationMessage}}</label>
                     <div class="col-md-10">
                         <input type="text" required #clientName = "ngModel" [(ngModel)] ="newClient.name" class="form-control " name="txtClientName"/>

@@ -28,4 +28,7 @@ export class ClientListService implements OnInit{
   public deleteClient(id:number){
     this.http.delete("http://localhost:51931/api/Clients/" + id);
   }
+  public add(client:any){
+    
+  }
 }
