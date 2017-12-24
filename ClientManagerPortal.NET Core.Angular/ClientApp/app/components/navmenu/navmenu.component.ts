@@ -53,6 +53,7 @@ export class NavMenuComponent implements OnInit {
           projects:[]
         }
         this.openAddClientBox=false;
+        
     }
     DisplayAddClientBox()
     {
