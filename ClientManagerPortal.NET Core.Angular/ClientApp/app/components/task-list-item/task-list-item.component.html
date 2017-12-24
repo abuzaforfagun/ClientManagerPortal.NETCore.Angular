@@ -13,13 +13,9 @@
         <div class="clearfix"></div>  
     </form>
 </div>
-
     <div *ngIf="selectedItem.projects.length == 0">
         No item found
     </div>
-
-
-
     <ul>
     <li *ngFor="let item of selectedItem.projects">{{item.name}}</li>
     </ul>

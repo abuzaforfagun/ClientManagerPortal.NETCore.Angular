@@ -16,7 +16,6 @@ namespace ClientManagerPortal.NET_Core.Angular.API
     {
         private List<Client> clients;
         private readonly IMapper mapper;
-
         public ClientsController(IMapper mapper)
         {
             clients = new List<Client>()
@@ -96,6 +95,16 @@ namespace ClientManagerPortal.NET_Core.Angular.API
           var c = this.clients.Find(obj=>obj.Id==id);
           this.clients.Remove(c);
           return Ok();
+        }
+
+        [HttpPost]
+        [Route("api/Clients")]
+        public IActionResult Add(ClientPresistance client)
+        {
+            var c = mapper.Map<Client>(client);
+            c.Id = clients.Last().Id+1;
+            this.clients.Add(c);
+            return Ok(c);
         }
     }
 }

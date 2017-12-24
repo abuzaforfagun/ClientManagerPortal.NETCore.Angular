@@ -41,6 +41,7 @@ export class TaskListItemComponent{
       id:0,
       name:""
     }
+    
     this.clientList.deleteClient(1);
     console.log(this.clientList.clients);
   }
