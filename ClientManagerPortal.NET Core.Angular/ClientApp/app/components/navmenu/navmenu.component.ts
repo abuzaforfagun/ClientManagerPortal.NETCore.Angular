@@ -35,6 +35,7 @@ export class NavMenuComponent implements OnInit {
 
     addClient()
     {
+        //throw new Error();
         
         var newId = this.clientList.clients[this.clientList.clients.length -1].id +1;
         this.newClient.id=newId;
@@ -47,6 +48,7 @@ export class NavMenuComponent implements OnInit {
           projects:[]
         }
         this.openAddClientBox=false;
+        
         
     }
     DisplayAddClientBox()

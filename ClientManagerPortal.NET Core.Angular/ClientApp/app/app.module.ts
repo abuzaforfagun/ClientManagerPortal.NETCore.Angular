@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import {ToastyModule} from "ng2-toasty"
+import {ToastyModule} from "ng2-toasty";
+import * as Raven from 'raven-js'; 
 
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
@@ -12,7 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AppErrorHandler } from './components/app.error.handler';
 
 
-
+//raven.config('https://51dc6bf8c18c47fd98dae8b5c50d885a:0db5131767724e2bb72ae35f0dec7a18@sentry.io/263573').install();
+Raven.config('https://51dc6bf8c18c47fd98dae8b5c50d885a@sentry.io/263573').install();
 
 @NgModule({
     declarations: [
@@ -35,7 +37,7 @@ import { AppErrorHandler } from './components/app.error.handler';
         ])
     ],
     providers:[
-        {provide: ErrorHandler, useClass:AppErrorHandler}
+        {provide: ErrorHandler, useClass:AppErrorHandler }
     ]
 })
 export class AppModuleShared {
