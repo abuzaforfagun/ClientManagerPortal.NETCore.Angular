@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "38033beff2f46850d77d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f89638fc175312231e0a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -2388,21 +2388,25 @@ var TaskListItemComponent = (function () {
             id: 0,
             name: ""
         };
+        activatedRoute.params.subscribe(function (p) {
+            _this.idFromParm = +p['id'] || 0;
+            _this.clientList.getOneClient(_this.idFromParm)
+                .subscribe(function (v) {
+                _this.selectedItem = v;
+            }, function (err) {
+                if (err.status == 404) {
+                    _this.route.navigate(['/portal']);
+                    return;
+                }
+            });
+        });
         this.route.events.subscribe(function (path) {
             if (path.constructor.name === "NavigationEnd") {
-                _this.sub = _this.activatedRoute.snapshot.paramMap.get('id');
-                _this.clientList.getOneClient(_this.sub)
-                    .subscribe(function (v) {
-                    _this.selectedItem = v;
-                }, function (err) {
-                    if (err.status == 404) {
-                        _this.route.navigate(['/vehicles']);
-                        return;
-                    }
-                });
             }
         });
     }
+    TaskListItemComponent.prototype.ngOnInit = function () {
+    };
     TaskListItemComponent.prototype.addProject = function () {
         this.selectedItem.projects.push(this.newProject);
         this.newProject = {
@@ -2823,7 +2827,7 @@ module.exports = "<h1>Client Management Portal</h1>";
 /* 32 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-inverse'>\r\n        <div class='navbar-header'>\r\n            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>\r\n                <span class='sr-only'>Toggle navigation</span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n            </button>\r\n            <a class='navbar-brand' [routerLink]=\"['/portal']\">Client Manager Portal</a>\r\n        </div>\r\n        <div class='clearfix'></div>\r\n        \r\n        <div class='navbar-collapse collapse'>\r\n            <div  *ngIf=\"openAddClientBox\" class=\"add_new\">\r\n                <form #form=\"ngForm\" novalidate ngNativeValidate (submit)=\"addClient()\">\r\n                    <label class=\"label label-danger\">{{validationMessage}}</label>\r\n                    <div class=\"col-md-10\">\r\n                        <input type=\"text\" required #clientName = \"ngModel\" [(ngModel)] =\"newClient.name\" class=\"form-control \" name=\"txtClientName\"/>\r\n                    </div>\r\n                    \r\n                    <div class=\"col-md-2\">\r\n                        <button [disabled]=\"!form.valid\" class=\"solid_button\"><span class=\"btn btn-save btn-primary glyphicon glyphicon-floppy-disk\"></span></button>\r\n                    </div>\r\n                    <div class=\"alert alert-danger\" *ngIf=\"clientName.touched && !clientName.valid\">Please enter a name.</div>\r\n                    <div class=\"clearfix\"></div>  \r\n                </form>\r\n            </div>\r\n            <div *ngIf=\"!openAddClientBox\" class=\"btn-plus-div\">\r\n                <button  (click)=\"DisplayAddClientBox()\"  class=\"btn-plus btn btn-primary\">+</button>\r\n            </div>\r\n            <ul class='nav navbar-nav'>\r\n                    <li [routerLinkActive]=\"['link-active']\" \r\n                        *ngFor=\"let item of clientList.clients\" \r\n                        >\r\n                        <a [routerLink]=\"['/portal', item.id]\">\r\n                            <span class='glyphicon glyphicon-th-list'></span> {{item.name}} ({{item.projects}})\r\n                        </a>\r\n                    </li>\r\n            </ul>\r\n        </div>\r\n    \r\n        \r\n    </div>\r\n</div>\r\n";
+module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-inverse'>\r\n        <div class='navbar-header'>\r\n            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>\r\n                <span class='sr-only'>Toggle navigation</span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n            </button>\r\n            <a class='navbar-brand' [routerLink]=\"['/portal']\">Client Manager Portal</a>\r\n        </div>\r\n        <div class='clearfix'></div>\r\n        \r\n        <div class='navbar-collapse collapse'>\r\n            <div  *ngIf=\"openAddClientBox\" class=\"add_new\">\r\n                <form #form=\"ngForm\" novalidate ngNativeValidate (submit)=\"addClient()\">\r\n                    <label class=\"label label-danger\">{{validationMessage}}</label>\r\n                    <div class=\"col-md-10\">\r\n                        <input type=\"text\" required #clientName = \"ngModel\" [(ngModel)] =\"newClient.name\" class=\"form-control \" name=\"txtClientName\"/>\r\n                    </div>\r\n                    \r\n                    <div class=\"col-md-2\">\r\n                        <button [disabled]=\"!form.valid\" class=\"solid_button\"><span class=\"btn btn-save btn-primary glyphicon glyphicon-floppy-disk\"></span></button>\r\n                    </div>\r\n                    <div class=\"alert alert-danger\" *ngIf=\"clientName.touched && !clientName.valid\">Please enter a name.</div>\r\n                    <div class=\"clearfix\"></div>  \r\n                </form>\r\n            </div>\r\n            <div *ngIf=\"!openAddClientBox\" class=\"btn-plus-div\">\r\n                <button  (click)=\"DisplayAddClientBox()\"  class=\"btn-plus btn btn-primary\">+</button>\r\n            </div>\r\n            <ul class='nav navbar-nav'>\r\n                    <li [routerLinkActive]=\"['link-active']\" \r\n                        *ngFor=\"let item of clientList.clients\" \r\n                        >\r\n                        <a [routerLink]=\"['/portal', item.id]\">\r\n                            <span class='glyphicon glyphicon-th-list'></span> {{item.name}} ({{item.projects}})\r\n                        </a>\r\n                    </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 33 */

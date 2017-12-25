@@ -83,7 +83,10 @@ namespace ClientManagerPortal.NET_Core.Angular.API
         {
             Client client;
             client = clients.SingleOrDefault(c=>c.Id==id);
-            
+            if(client==null){
+                return NotFound();
+            }
+                
             return Ok(client);
         }
 

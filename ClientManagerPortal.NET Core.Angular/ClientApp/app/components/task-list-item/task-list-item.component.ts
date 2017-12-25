@@ -6,8 +6,13 @@ import { ClientListService } from '../../services/client-list.service';
   templateUrl: './task-list-item.component.html',
   styleUrls: ['./task-list-item.component.css']
 })
-export class TaskListItemComponent{
+export class TaskListItemComponent implements OnInit{
 
+  ngOnInit(): void {
+    
+    
+  }
+  idFromParm:number;
   selectedItem:any;
   clients:any[]=[];
   newProject:any;
@@ -18,21 +23,28 @@ export class TaskListItemComponent{
       id:0,
       name:""
     }
+    activatedRoute.params.subscribe(p => {
+      this.idFromParm = +p['id'] || 0;
+      this.clientList.getOneClient(this.idFromParm)
+      .subscribe(
+        v => {
+          this.selectedItem = v;
+        },
+        err => {
+          
+          if (err.status == 404) {
+            this.route.navigate(['/portal']);
+            return; 
+          }
+        });  
+    });
+
+    
     
     this.route.events.subscribe(path => {
       if(path.constructor.name==="NavigationEnd"){
-        this.sub=this.activatedRoute.snapshot.paramMap.get('id');
-        this.clientList.getOneClient(this.sub)
-        .subscribe(
-          v => {
-            this.selectedItem = v
-          },
-          err => {
-            if (err.status == 404) {
-              this.route.navigate(['/vehicles']);
-              return; 
-            }
-          });
+        
+        
           
       }
     });
