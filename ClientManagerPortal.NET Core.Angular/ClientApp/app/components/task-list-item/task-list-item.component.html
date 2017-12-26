@@ -1,5 +1,5 @@
-<ng-container *ngIf="selectedItem">
-<h2>{{selectedItem.name}}</h2>
+<ng-container *ngIf="selectedClient">
+<h2>{{selectedClient.name}}</h2>
 <hr/>
 
 <div class="dialogue add_new">
@@ -13,11 +13,11 @@
         <div class="clearfix"></div>  
     </form>
 </div>
-    <div *ngIf="selectedItem.projects.length == 0">
+    <div *ngIf="selectedClient.projects.length == 0">
         No item found
     </div>
     <ul>
-    <li *ngFor="let item of selectedItem.projects">{{item.name}}</li>
+    <li *ngFor="let item of selectedClient.projects">{{item.name}}</li>
     </ul>
 
 </ng-container>

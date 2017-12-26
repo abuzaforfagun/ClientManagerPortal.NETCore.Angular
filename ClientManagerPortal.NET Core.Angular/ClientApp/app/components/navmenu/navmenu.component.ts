@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { ToastyService } from 'ng2-toasty';
+import { Client } from '../../models/client';
 
 @Component({
     selector: 'nav-menu',
@@ -16,8 +17,12 @@ export class NavMenuComponent implements OnInit {
         this.clients = this.clientList.clients;
 
     }
-    clients:any[]=[];
-    newClient:any;
+    clients:Client[]=[];
+    newClient:Client={
+        id:0,
+        name:"",
+        projects:[]
+    };
     validationMessage:string="";
     openAddClientBox=false;
 
@@ -25,11 +30,6 @@ export class NavMenuComponent implements OnInit {
                 private http:Http,
                 private toastyService:ToastyService){
       
-        this.newClient ={
-            id:0,
-            name:"",
-            projects:[]
-        }
         console.log(this.clientList.clients);
     }
 
@@ -48,8 +48,6 @@ export class NavMenuComponent implements OnInit {
           projects:[]
         }
         this.openAddClientBox=false;
-        
-        
     }
     DisplayAddClientBox()
     {

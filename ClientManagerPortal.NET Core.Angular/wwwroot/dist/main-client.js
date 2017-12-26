@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f89638fc175312231e0a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2fb10ba95cea591ba115"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -834,7 +834,11 @@ var ClientListService = (function () {
         var _this = this;
         this.http = http;
         this.clients = [];
-        this.singleClient = null;
+        this.singleClient = {
+            id: 0,
+            name: "",
+            projects: []
+        };
         this.http.get("http://localhost:51931/api/Clients").subscribe(function (res) { return _this.clients = res.json(); });
     }
     ClientListService.prototype.ngOnInit = function () {
@@ -2314,13 +2318,13 @@ var NavMenuComponent = (function () {
         this.toastyService = toastyService;
         this.tmpclients = [];
         this.clients = [];
-        this.validationMessage = "";
-        this.openAddClientBox = false;
         this.newClient = {
             id: 0,
             name: "",
             projects: []
         };
+        this.validationMessage = "";
+        this.openAddClientBox = false;
         console.log(this.clientList.clients);
     }
     NavMenuComponent.prototype.ngOnInit = function () {
@@ -2392,7 +2396,7 @@ var TaskListItemComponent = (function () {
             _this.idFromParm = +p['id'] || 0;
             _this.clientList.getOneClient(_this.idFromParm)
                 .subscribe(function (v) {
-                _this.selectedItem = v;
+                _this.selectedClient = v;
             }, function (err) {
                 if (err.status == 404) {
                     _this.route.navigate(['/portal']);
@@ -2400,15 +2404,11 @@ var TaskListItemComponent = (function () {
                 }
             });
         });
-        this.route.events.subscribe(function (path) {
-            if (path.constructor.name === "NavigationEnd") {
-            }
-        });
     }
     TaskListItemComponent.prototype.ngOnInit = function () {
     };
     TaskListItemComponent.prototype.addProject = function () {
-        this.selectedItem.projects.push(this.newProject);
+        this.selectedClient.projects.push(this.newProject);
         this.newProject = {
             id: 0,
             name: ""
@@ -2833,7 +2833,7 @@ module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-invers
 /* 33 */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"selectedItem\">\n<h2>{{selectedItem.name}}</h2>\n<hr/>\n\n<div class=\"dialogue add_new\">\n    <form (submit)=\"addProject()\">\n        <div class=\"col-md-6\">\n            <input type=\"text\" [(ngModel)] =\"newProject.name\" class=\"form-control col-md-6\" name=\"txtClientName\"/>\n        </div>\n        <div class=\"col-md-6\">\n            <input type=\"submit\"  class=\"btn btn-primary\" value=\"Save\"/>\n        </div>\n        <div class=\"clearfix\"></div>  \n    </form>\n</div>\n    <div *ngIf=\"selectedItem.projects.length == 0\">\n        No item found\n    </div>\n    <ul>\n    <li *ngFor=\"let item of selectedItem.projects\">{{item.name}}</li>\n    </ul>\n\n</ng-container>";
+module.exports = "<ng-container *ngIf=\"selectedClient\">\n<h2>{{selectedClient.name}}</h2>\n<hr/>\n\n<div class=\"dialogue add_new\">\n    <form (submit)=\"addProject()\">\n        <div class=\"col-md-6\">\n            <input type=\"text\" [(ngModel)] =\"newProject.name\" class=\"form-control col-md-6\" name=\"txtClientName\"/>\n        </div>\n        <div class=\"col-md-6\">\n            <input type=\"submit\"  class=\"btn btn-primary\" value=\"Save\"/>\n        </div>\n        <div class=\"clearfix\"></div>  \n    </form>\n</div>\n    <div *ngIf=\"selectedClient.projects.length == 0\">\n        No item found\n    </div>\n    <ul>\n    <li *ngFor=\"let item of selectedClient.projects\">{{item.name}}</li>\n    </ul>\n\n</ng-container>";
 
 /***/ }),
 /* 34 */

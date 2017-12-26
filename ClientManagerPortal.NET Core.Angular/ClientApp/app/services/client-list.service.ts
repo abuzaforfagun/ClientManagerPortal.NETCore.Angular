@@ -2,14 +2,19 @@ import { Injectable } from '@angular/core';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Http  } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Client } from '../models/client';
 
 @Injectable()
 export class ClientListService implements OnInit{
   ngOnInit() {
     
   }
-  clients:any[]=[];
-  singleClient:any=null;
+  clients:Client[]=[];
+  singleClient:Client={
+    id:0,
+    name: "",
+    projects:[]
+  };
   constructor(private http:Http) { 
     this.http.get("http://localhost:51931/api/Clients").subscribe(res => this.clients=res.json());
   }

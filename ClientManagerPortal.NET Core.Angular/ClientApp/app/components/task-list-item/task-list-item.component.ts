@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
 import { ClientListService } from '../../services/client-list.service';
+import { Project } from '../../models/project';
+import { Client } from '../../models/client';
 @Component({
   selector: 'app-task-list-item',
   templateUrl: './task-list-item.component.html',
@@ -13,9 +15,9 @@ export class TaskListItemComponent implements OnInit{
     
   }
   idFromParm:number;
-  selectedItem:any;
-  clients:any[]=[];
-  newProject:any;
+  selectedClient:Client;
+  clients:Client[]=[];
+  newProject:Project;
 
   constructor(private activatedRoute:ActivatedRoute, 
               private route:Router, private clientList:ClientListService ) {
@@ -28,7 +30,7 @@ export class TaskListItemComponent implements OnInit{
       this.clientList.getOneClient(this.idFromParm)
       .subscribe(
         v => {
-          this.selectedItem = v;
+          this.selectedClient = v;
         },
         err => {
           
@@ -38,28 +40,15 @@ export class TaskListItemComponent implements OnInit{
           }
         });  
     });
-
-    
-    
-    this.route.events.subscribe(path => {
-      if(path.constructor.name==="NavigationEnd"){
-        
-        
-          
-      }
-    });
-    
   }
 
   addProject(){
-    this.selectedItem.projects.push(this.newProject);
+    this.selectedClient.projects.push(this.newProject);
     this.newProject={
       id:0,
       name:""
     }
-    
     this.clientList.deleteClient(1);
-    
   }
   
   id: number;
