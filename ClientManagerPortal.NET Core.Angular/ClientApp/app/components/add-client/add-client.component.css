@@ -1,0 +1,9 @@
+.add_new .col-md-10{padding:5px;}
+.add_new .col-md-2{padding:0}
+.add_new .solid_button{
+    background: transparent;
+    border: none;
+    margin-top: 4px;
+}
+.btn-plus, .add_new .label-danger{margin-left:5px;}
+.btn-plus-div{text-align: right; margin-right: 5px; margin-top:5px;}

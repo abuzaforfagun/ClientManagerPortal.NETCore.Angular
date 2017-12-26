@@ -12,23 +12,7 @@
         <div class='clearfix'></div>
         
         <div class='navbar-collapse collapse'>
-            <div  *ngIf="openAddClientBox" class="add_new">
-                <form #form="ngForm" novalidate ngNativeValidate (submit)="addClient()">
-                    <label class="label label-danger">{{validationMessage}}</label>
-                    <div class="col-md-10">
-                        <input type="text" required #clientName = "ngModel" [(ngModel)] ="newClient.name" class="form-control " name="txtClientName"/>
-                    </div>
-                    
-                    <div class="col-md-2">
-                        <button [disabled]="!form.valid" class="solid_button"><span class="btn btn-save btn-primary glyphicon glyphicon-floppy-disk"></span></button>
-                    </div>
-                    <div class="alert alert-danger" *ngIf="clientName.touched && !clientName.valid">Please enter a name.</div>
-                    <div class="clearfix"></div>  
-                </form>
-            </div>
-            <div *ngIf="!openAddClientBox" class="btn-plus-div">
-                <button  (click)="DisplayAddClientBox()"  class="btn-plus btn btn-primary">+</button>
-            </div>
+            <app-add-client></app-add-client>
             <ul class='nav navbar-nav'>
                     <li [routerLinkActive]="['link-active']" 
                         *ngFor="let item of clientList.clients" 

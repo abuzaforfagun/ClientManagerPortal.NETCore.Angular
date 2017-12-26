@@ -11,6 +11,7 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { TaskListItemComponent } from './components/task-list-item/task-list-item.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppErrorHandler } from './components/app.error.handler';
+import { AddClientComponent } from './components/add-client/add-client.component';
 
 
 //raven.config('https://51dc6bf8c18c47fd98dae8b5c50d885a:0db5131767724e2bb72ae35f0dec7a18@sentry.io/263573').install();
@@ -22,6 +23,7 @@ Raven.config('https://51dc6bf8c18c47fd98dae8b5c50d885a@sentry.io/263573').instal
         NavMenuComponent,
         TaskListItemComponent,
         HomeComponent,
+        AddClientComponent,
         
     ],
     imports: [
